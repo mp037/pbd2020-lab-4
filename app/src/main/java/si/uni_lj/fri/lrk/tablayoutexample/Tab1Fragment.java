@@ -44,16 +44,8 @@ public class Tab1Fragment extends Fragment {
         adapter = new ArrayAdapter<String>(view.getContext(), android.R.layout.simple_list_item_1, listItems);
         myListView.setAdapter(adapter);
 
-        FloatingActionButton fab = view.findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        // TODO: Find FloatingActionButton and set the behaviour
 
-                addListItem();
-                Snackbar.make(view, "Item added to list", Snackbar.LENGTH_LONG)
-                        .setAction("Undo", undoOnClickListener).show();
-            }
-        });
         return view;
     }
 

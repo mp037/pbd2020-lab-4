@@ -8,9 +8,10 @@ import android.widget.TextView;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
+public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.CardViewHolder> {
 
     private String[] titles = {"Mercury",
             "Venus",
@@ -36,46 +37,28 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             R.drawable.uranus,
             R.drawable.neptune};
 
-    class ViewHolder extends RecyclerView.ViewHolder {
+
+    class CardViewHolder extends RecyclerView.ViewHolder {
         public ImageView itemImage;
         public TextView itemTitle;
         public TextView itemDetail;
 
-        public ViewHolder(View itemView) {
+        public CardViewHolder(View itemView) {
             super(itemView);
-            itemImage =
-                    (ImageView) itemView.findViewById(R.id.item_image);
-            itemTitle =
-                    (TextView) itemView.findViewById(R.id.item_title);
-            itemDetail =
-                    (TextView) itemView.findViewById(R.id.item_detail);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override public void onClick(View v) {
-                    int position = getAdapterPosition();
-
-                    Snackbar.make(v, "Click detected on item " + position,
-                            Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
-
-                }
-            });
+            // TODO: set the above fields, show Snackbar when a user clicks on an item
         }
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View v = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.card_layout, viewGroup, false);
-        ViewHolder viewHolder = new ViewHolder(v);
-        return viewHolder;
+    public CardViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+        // TODO: Inflate the view, make a CardViewHolder and return it
+        return null;
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder viewHolder, int i) {
-        viewHolder.itemTitle.setText(titles[i]);
-        viewHolder.itemDetail.setText(details[i]);
-        viewHolder.itemImage.setImageResource(images[i]);
+    public void onBindViewHolder(CardViewHolder viewHolder, int i) {
+        // TODO: set the image, title, and details data
     }
 
     @Override

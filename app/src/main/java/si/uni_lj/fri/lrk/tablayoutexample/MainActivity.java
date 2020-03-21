@@ -36,29 +36,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void configureTabLayout(){
-        TabLayout tabLayout = findViewById(R.id.tab_layout);
 
-        final ViewPager2 viewPager = findViewById(R.id.pager);
-        final FragmentStateAdapter adapter = new TabPagerAdapter(this, NUM_OF_TABS);//tabLayout.getTabCount());
-        viewPager.setAdapter(adapter);
-
-        new TabLayoutMediator(tabLayout, viewPager,
-                new TabLayoutMediator.TabConfigurationStrategy() {
-                    @Override public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
-                        switch (position){
-                            case 0:
-                                tab.setText("Sky observations");
-                                break;
-                            case 1:
-                                tab.setText("Planet Wiki");
-                                break;
-                            case 2:
-                                tab.setText("Notes");
-                                break;
-                        }
-
-                    }
-                }).attach();
+        // TODO: Implement tab-viewpager-adapter connection
 
     }
 
